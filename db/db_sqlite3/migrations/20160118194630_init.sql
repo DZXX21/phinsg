@@ -1,6 +1,5 @@
 
--- +goose Up
--- SQL in section 'Up' is executed when this migration is applied
+
 CREATE TABLE IF NOT EXISTS "users" ("id" integer primary key autoincrement,"username" varchar(255) NOT NULL UNIQUE,"hash" varchar(255),"api_key" varchar(255) NOT NULL UNIQUE );
 CREATE TABLE IF NOT EXISTS "templates" ("id" integer primary key autoincrement,"user_id" bigint,"name" varchar(255),"subject" varchar(255),"text" varchar(255),"html" varchar(255),"modified_date" datetime );
 CREATE TABLE IF NOT EXISTS "targets" ("id" integer primary key autoincrement,"first_name" varchar(255),"last_name" varchar(255),"email" varchar(255),"position" varchar(255) );
@@ -13,8 +12,7 @@ CREATE TABLE IF NOT EXISTS "events" ("id" integer primary key autoincrement,"cam
 CREATE TABLE IF NOT EXISTS "campaigns" ("id" integer primary key autoincrement,"user_id" bigint,"name" varchar(255) NOT NULL ,"created_date" datetime,"completed_date" datetime,"template_id" bigint,"page_id" bigint,"status" varchar(255),"url" varchar(255) );
 CREATE TABLE IF NOT EXISTS "attachments" ("id" integer primary key autoincrement,"template_id" bigint,"content" varchar(255),"type" varchar(255),"name" varchar(255) );
 
--- +goose Down
--- SQL section 'Down' is executed when this migration is rolled back
+
 DROP TABLE "attachments";
 DROP TABLE "campaigns";
 DROP TABLE "events";

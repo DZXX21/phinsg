@@ -1,5 +1,4 @@
--- +goose Up
--- SQL in section 'Up' is executed when this migration is applied
+
 UPDATE `results`
 SET status = "Submitted Data"
 WHERE id IN (
@@ -20,5 +19,4 @@ WHERE id IN (
                 AND results_tmp.email = events.email
                 AND results_tmp.campaign_id = events.campaign_id);
 
--- +goose Down
--- SQL section 'Down' is executed when this migration is rolled back
+

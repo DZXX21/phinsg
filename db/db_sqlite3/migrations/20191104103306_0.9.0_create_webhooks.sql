@@ -1,6 +1,5 @@
 
--- +goose Up
--- SQL in section 'Up' is executed when this migration is applied
+
 CREATE TABLE IF NOT EXISTS "webhooks" (
     "id" integer primary key autoincrement,
     "name" varchar(255),
@@ -10,6 +9,5 @@ CREATE TABLE IF NOT EXISTS "webhooks" (
 );
 
 
--- +goose Down
--- SQL section 'Down' is executed when this migration is rolled back
+
 

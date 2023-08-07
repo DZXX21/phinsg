@@ -1,6 +1,5 @@
 
--- +goose Up
--- SQL in section 'Up' is executed when this migration is applied
+
 CREATE TABLE IF NOT EXISTS `email_requests` (
     `id` integer primary key auto_increment,
     `user_id` integer,
@@ -16,6 +15,5 @@ CREATE TABLE IF NOT EXISTS `email_requests` (
 );
 
 
--- +goose Down
--- SQL section 'Down' is executed when this migration is rolled back
+
 DROP TABLE `email_requests`;

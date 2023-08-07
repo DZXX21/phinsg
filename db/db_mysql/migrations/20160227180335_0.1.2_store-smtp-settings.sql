@@ -1,9 +1,7 @@
 
--- +goose Up
--- SQL in section 'Up' is executed when this migration is applied
--- Move the relationship between campaigns and smtp to campaigns
+
 ALTER TABLE `campaigns` ADD COLUMN smtp_id bigint;
--- Create a new table to store smtp records
+
 DROP TABLE `smtp`;
 CREATE TABLE `smtp`(
 	id integer primary key auto_increment,
@@ -17,6 +15,5 @@ CREATE TABLE `smtp`(
 	modified_date datetime,
 	ignore_cert_errors BOOLEAN
 );
--- +goose Down
--- SQL section 'Down' is executed when this migration is rolled back
+
 
